@@ -1,0 +1,125 @@
+CREATE AND PRINT ADJACENCY LIST REPRESENTATION OF DIRECTED,WEIGHTED GRAPH
+CODE:
+def addNode(v):
+    if v in graph:
+        print(v,"is already available.")
+    else:
+        graph[v]=[]
+def addEdge(node1,node2,w):
+    if node1 not in graph:
+        print(node1,"is not available.")
+    elif node2 not in graph:    
+        print(node2,"is not available.")
+    else:
+        graph[node1].append([node2,w])
+        #graph[node2].append(node1)
+def show():  
+    for x in graph:
+        print(x,":",graph[x])
+graph={}
+w={}
+while True:
+    print()
+    print("1.Add Node\n2.Add Edge\n3.Show\n4.Exit\n")
+    ch=int(input("Enter your choice: "))
+    if ch==1:
+        x=input("Enter element ")
+        addNode(x)
+    elif ch==2:
+        node1=input("Enter 1st node: ")
+        node2=input("Enter 2nd node: ")
+        w=int(input("Enter weight: "))
+        addEdge(node1,node2,w)
+    elif ch==3:
+        show()
+    elif ch==4:
+        break
+    else:
+        print("Invalid choice")
+OUTPUT:
+1.Add Node
+2.Add Edge
+3.Show
+4.Exit
+
+Enter your choice: 1
+Enter element a
+1.Add Node
+2.Add Edge
+3.Show
+4.Exit
+
+Enter your choice: 1
+Enter element b
+1.Add Node
+2.Add Edge
+3.Show
+4.Exit
+Enter your choice: 1
+Enter element c
+1.Add Node
+2.Add Edge
+3.Show
+4.Exit
+
+Enter your choice: 1
+Enter element d
+1.Add Node
+2.Add Edge
+3.Show
+4.Exit
+
+Enter your choice: 3
+a : []
+b : []
+c : []
+d : []
+
+1.Add Node
+2.Add Edge
+3.Show
+4.Exit
+
+Enter your choice: 2
+Enter 1st node: a
+Enter 2nd node: c
+Enter weight: 22
+1.Add Node
+2.Add Edge
+3.Show
+4.Exit
+
+Enter your choice: 3
+a : [['c', 22]]
+b : []
+c : []
+d : []
+
+1.Add Node
+2.Add Edge
+3.Show
+4.Exit
+
+Enter your choice: 2
+Enter 1st node: b
+Enter 2nd node: d
+Enter weight: 34
+1.Add Node
+2.Add Edge
+3.Show
+4.Exit
+
+Enter your choice: 2
+Enter 1st node: b
+Enter 2nd node: c
+Enter weight: 55
+1.Add Node
+2.Add Edge
+3.Show
+4.Exit
+
+Enter your choice: 3
+a : [['c', 22]]
+b : [['d', 34], ['c', 55]]
+c : []
+d : []
